@@ -7,7 +7,7 @@ export const REGEX_MODES: Mode[] = [
 ];
 
 export const MODE_IDS = {
-  MATCH_MODE: 1,
-  FIND_MODE: 2,
-  REPLACE_MODE: 3,
+  MATCH: 1,
+  FIND: 2,
+  REPLACE: 3,
 };

@@ -15,7 +15,8 @@ export class AppComponent {
   }
 
   onModeChanged(mode: number) {
+    if (this.mode != mode)
+      this.selectedTask = null;
     this.mode = mode;
-    console.log('switch mode:', mode);
   }
 }
