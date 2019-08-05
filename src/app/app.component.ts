@@ -8,7 +8,7 @@ import {TaskDescription} from "./models/task";
 })
 export class AppComponent {
   selectedTask: TaskDescription;
-  mode: number;
+  mode: number = 1;
 
   onTaskSelected(task: TaskDescription) {
     this.selectedTask = task;

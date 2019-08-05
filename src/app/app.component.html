@@ -9,6 +9,7 @@
           <app-task-list
             (taskSelected)="onTaskSelected($event)"
             (modeChanged)="onModeChanged($event)"
+            [selectedMode]="mode"
           ></app-task-list>
         </div>
         <div class="cell medium-6 medium-cell-block-y">

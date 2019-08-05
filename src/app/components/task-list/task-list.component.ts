@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TaskDescription} from "../../models/task";
 import {TaskService} from "../../services/task.service";
 import {MODE_IDS, REGEX_MODES} from "../../constants/modes";
@@ -10,7 +10,7 @@ import {MODE_IDS, REGEX_MODES} from "../../constants/modes";
 })
 export class TaskListComponent implements OnInit {
   tasks: TaskDescription[];
-  selectedMode: number = 1;
+  @Input() selectedMode: number;
 
   @Output() taskSelected = new EventEmitter<TaskDescription>();
 
@@ -28,6 +28,8 @@ export class TaskListComponent implements OnInit {
   }
 
   onTaskSelected(task: TaskDescription) {
+    var type = MODE_IDS[task.type];
+    this.modeChanged.emit(type);
     this.taskSelected.emit(task);
   }
 
