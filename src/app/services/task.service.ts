@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {TaskDescription} from "../models/task";
+import {TaskDescription, TaskMatchResult} from "../models/task";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -13,5 +13,9 @@ export class TaskService {
 
   getTasks(): Observable<TaskDescription[]> {
     return this.http.get<TaskDescription[]>("/api/tasks");
+  }
+
+  match(sources: string[], regex: string): Observable<TaskMatchResult[]> {
+    return this.http.post<TaskMatchResult[]>("/api/match", {sources, regex});
   }
 }

@@ -7,19 +7,24 @@
       </div>
     </div>
     <div class="cell sources" *ngIf="!task">
-      <textarea rows="3"></textarea>
+      <textarea  [(ngModel)]="source" rows="3"></textarea>
     </div>
     <div class="cell header">Regex</div>
     <div class="cell">
       <div class="grid-x">
         <div class="cell auto regular-input">
-          <input placeholder="input regex">
+          <input [(ngModel)]="regex" placeholder="input regex">
         </div>
         <div class="cell auto regular-input" *ngIf="mode==modes.REPLACE">
-          <input placeholder="replace to">
+          <input [(ngModel)]="replaceTo" placeholder="replace to">
         </div>
         <div class="cell shrink">
-          <button type="button" class="success button expanded">Execute</button>
+          <button type="button"
+                  class="success button expanded"
+                  (click)="onExecute()"
+          >
+            Execute
+          </button>
         </div>
       </div>
     </div>

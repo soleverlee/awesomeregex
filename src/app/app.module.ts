@@ -8,6 +8,7 @@ import {TaskExecutorComponent} from './components/task-executor/task-executor.co
 import {TaskDescriptionComponent} from './components/task-description/task-description.component';
 import {HttpClientModule} from "@angular/common/http";
 import {TaskService} from "./services/task.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {TaskService} from "./services/task.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

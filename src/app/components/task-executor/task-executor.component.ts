@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {TaskDescription} from "../../models/task";
 import {Mode} from "../../models/mode";
 import {MODE_IDS, REGEX_MODES} from "../../constants/modes";
+import {TaskService} from "../../services/task.service";
 
 @Component({
   selector: 'app-task-executor',
@@ -12,7 +13,11 @@ export class TaskExecutorComponent implements OnInit {
   @Input() task: TaskDescription;
   @Input() mode: Mode;
 
-  constructor() {
+  source: string = "";
+  regex: string = "";
+  replaceTo: string = "";
+
+  constructor(private taskService: TaskService) {
   }
 
   ngOnInit() {
@@ -20,5 +25,13 @@ export class TaskExecutorComponent implements OnInit {
 
   get modes() {
     return MODE_IDS;
+  }
+
+  onExecute() {
+    var sources = this.task ? this.task.sources : [this.source];
+    this.taskService.match(sources, this.regex)
+    .subscribe(results => {
+      console.log(results);
+    })
   }
 }
