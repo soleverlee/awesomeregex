@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TaskDescription} from "./models/task";
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  selectedTask: TaskDescription;
+
+  onTaskSelected(task: TaskDescription) {
+    this.selectedTask = task;
+  }
 }
