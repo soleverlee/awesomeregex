@@ -2,3 +2,21 @@
 body {
   font-family: Open Sans, Lucida Sans Unicode, Lucida Grande, sansSerif;
 }
+
+.header {
+  color: #344f71;
+  font-weight: 700;
+  border-bottom: 1px solid #344f71;
+  margin-bottom: 5px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li {
+  color: #4e4e4e;
+  font-weight: 700;
+}
