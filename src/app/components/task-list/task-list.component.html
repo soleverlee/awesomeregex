@@ -4,6 +4,13 @@
     <li>Java</li>
     <li>JavaScript</li>
   </ul>
+  <div class="cell header">Mode</div>
+  <ul class="cell options">
+    <li class="grid-x" *ngFor="let mode of modes">
+      <a class="cell auto" (click)="onSwitchMode(mode.type)">{{mode.title}}</a>
+      <div class="cell shrink" *ngIf="selectedMode==mode.type">√</div>
+    </li>
+  </ul>
   <div class="cell header">Tasks</div>
   <div class="cell">
     <ol class=" task-list">

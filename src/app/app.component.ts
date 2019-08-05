@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TaskDescription} from "./models/task";
 
 @Component({
@@ -8,8 +8,14 @@ import {TaskDescription} from "./models/task";
 })
 export class AppComponent {
   selectedTask: TaskDescription;
+  mode: number;
 
   onTaskSelected(task: TaskDescription) {
     this.selectedTask = task;
+  }
+
+  onModeChanged(mode: number) {
+    this.mode = mode;
+    console.log('switch mode:', mode);
   }
 }
