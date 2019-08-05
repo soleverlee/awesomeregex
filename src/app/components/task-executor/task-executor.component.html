@@ -1,8 +1,10 @@
 <div class="task-executor">
   <div class="grid-x">
     <div class="cell header">Test string</div>
-    <div class="cell">
-      <textarea class="test-source" rows="4"></textarea>
+    <div class="cell sources" *ngIf="task && task.type=='MATCH'">
+      <div class="cell source-item" *ngFor="let source of task.sources">
+        <span>{{source}}</span>
+      </div>
     </div>
     <div class="cell header">Regex</div>
     <div class="cell">

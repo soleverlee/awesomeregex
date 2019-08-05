@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TaskDescription} from "../../models/task";
 
 @Component({
   selector: 'app-task-executor',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-executor.component.scss']
 })
 export class TaskExecutorComponent implements OnInit {
+  @Input() task: TaskDescription;
 
   constructor() { }
 

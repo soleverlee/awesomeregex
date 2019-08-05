@@ -9,7 +9,7 @@
           <app-task-list (taskSelected)="onTaskSelected($event)"></app-task-list>
         </div>
         <div class="cell medium-6 medium-cell-block-y">
-          <app-task-executor></app-task-executor>
+          <app-task-executor [task]="selectedTask"></app-task-executor>
         </div>
         <div class="cell medium-4 medium-cell-block-y">
           <app-task-description [task]="selectedTask"></app-task-description>
