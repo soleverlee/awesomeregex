@@ -7,12 +7,7 @@
   <div class="cell header">Tasks</div>
   <div class="cell">
     <ol class=" task-list">
-      <li>元字符</li>
-      <li>后向引用</li>
-      <li>位置指定</li>
-      <li>负向位置指定</li>
-      <li>贪婪与懒惰</li>
-      <li>一些你不知道的正则表达式的高级用法</li>
+      <li *ngFor="let task of tasks">{{task.title}}</li>
     </ol>
   </div>
 </div>
