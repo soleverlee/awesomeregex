@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TaskDescription} from "../../models/task";
 
 @Component({
   selector: 'app-task-description',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-description.component.scss']
 })
 export class TaskDescriptionComponent implements OnInit {
+  @Input() task: TaskDescription;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
