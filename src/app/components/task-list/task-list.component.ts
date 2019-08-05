@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {TaskDescription} from "../../models/task";
 import {TaskService} from "../../services/task.service";
-import {REGEX_MODES} from "../../constants/modes";
+import {MODE_IDS, REGEX_MODES} from "../../constants/modes";
 
 @Component({
   selector: 'app-task-list',

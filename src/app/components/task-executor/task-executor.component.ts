@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TaskDescription} from "../../models/task";
+import {Mode} from "../../models/mode";
+import {MODE_IDS, REGEX_MODES} from "../../constants/modes";
 
 @Component({
   selector: 'app-task-executor',
@@ -8,10 +10,15 @@ import {TaskDescription} from "../../models/task";
 })
 export class TaskExecutorComponent implements OnInit {
   @Input() task: TaskDescription;
+  @Input() mode: Mode;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  get modes() {
+    return MODE_IDS;
+  }
 }
