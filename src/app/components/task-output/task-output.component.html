@@ -1,0 +1,8 @@
+<div class="grid-x">
+  <div class="cell result-item"
+       *ngFor="let result of matchResults"
+       [ngClass]="{'match-success': result.matched, 'match-failed': !result.matched}"
+  >
+    <span >{{result.source}}</span>
+  </div>
+</div>

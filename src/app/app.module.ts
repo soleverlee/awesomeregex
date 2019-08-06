@@ -9,6 +9,7 @@ import {TaskDescriptionComponent} from './components/task-description/task-descr
 import {HttpClientModule} from "@angular/common/http";
 import {TaskService} from "./services/task.service";
 import {FormsModule} from "@angular/forms";
+import { TaskOutputComponent } from './components/task-output/task-output.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {FormsModule} from "@angular/forms";
     TaskListComponent,
     TaskExecutorComponent,
     TaskDescriptionComponent,
+    TaskOutputComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TaskDescription} from "../../models/task";
+import {TaskDescription, TaskMatchResult} from "../../models/task";
 import {Mode} from "../../models/mode";
 import {MODE_IDS, REGEX_MODES} from "../../constants/modes";
 import {TaskService} from "../../services/task.service";
@@ -16,6 +16,7 @@ export class TaskExecutorComponent implements OnInit {
   source: string = "";
   regex: string = "";
   replaceTo: string = "";
+  matchResults: TaskMatchResult[] = null;
 
   constructor(private taskService: TaskService) {
   }
@@ -32,6 +33,7 @@ export class TaskExecutorComponent implements OnInit {
     this.taskService.match(sources, this.regex)
     .subscribe(results => {
       console.log(results);
+      this.matchResults = results;
     })
   }
 }
