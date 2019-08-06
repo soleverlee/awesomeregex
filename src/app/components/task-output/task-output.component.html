@@ -3,6 +3,11 @@
        *ngFor="let result of matchResults"
        [ngClass]="{'match-success': result.matched, 'match-failed': !result.matched}"
   >
-    <span >{{result.source}}</span>
+    <span *ngIf="!result.groups">{{result.source}}</span>
+    <div class="grid-x" *ngIf="result.groups">
+      <div class="cell" *ngFor="let group of result.groups">
+        <p class="group-mark" [innerHTML]="group | safeHtml"></p>
+      </div>
+    </div>
   </div>
 </div>

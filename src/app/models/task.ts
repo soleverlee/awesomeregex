@@ -9,4 +9,5 @@ export class TaskDescription {
 export class TaskMatchResult {
   source: string;
   matched: boolean;
+  groups: string[];
 }

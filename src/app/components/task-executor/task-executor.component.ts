@@ -11,7 +11,7 @@ import {TaskService} from "../../services/task.service";
 })
 export class TaskExecutorComponent implements OnInit {
   @Input() task: TaskDescription;
-  @Input() mode: Mode;
+  @Input() mode: number;
 
   source: string = "";
   regex: string = "";
@@ -30,7 +30,22 @@ export class TaskExecutorComponent implements OnInit {
 
   onExecute() {
     var sources = this.task ? this.task.sources : [this.source];
+    if (this.mode === MODE_IDS.MATCH)
+      this._onMatch(sources);
+    else if (this.mode === MODE_IDS.FIND)
+      this._onFind(sources);
+  }
+
+  _onMatch(sources: string[]) {
     this.taskService.match(sources, this.regex)
+    .subscribe(results => {
+      console.log(results);
+      this.matchResults = results;
+    })
+  }
+
+  _onFind(sources: string[]) {
+    this.taskService.find(sources, this.regex)
     .subscribe(results => {
       console.log(results);
       this.matchResults = results;

@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {TaskService} from "./services/task.service";
 import {FormsModule} from "@angular/forms";
 import { TaskOutputComponent } from './components/task-output/task-output.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TaskOutputComponent } from './components/task-output/task-output.compon
     TaskExecutorComponent,
     TaskDescriptionComponent,
     TaskOutputComponent,
+    SafeHtmlPipe,
   ],
   imports: [
     BrowserModule,

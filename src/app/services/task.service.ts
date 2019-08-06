@@ -18,4 +18,8 @@ export class TaskService {
   match(sources: string[], regex: string): Observable<TaskMatchResult[]> {
     return this.http.post<TaskMatchResult[]>("/api/match", {sources, regex});
   }
+
+  find(sources: string[], regex: string): Observable<TaskMatchResult[]> {
+    return this.http.post<TaskMatchResult[]>("/api/find", {sources, regex});
+  }
 }
