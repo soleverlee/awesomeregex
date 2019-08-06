@@ -29,8 +29,14 @@
       </div>
     </div>
     <div class="cell header">Output</div>
-    <div class="cell">
+    <div class="cell output"
+         [ngClass]="{'passed':passed, 'failed':failed}"
+    >
       <app-task-output [matchResults]="matchResults"></app-task-output>
+      <div class="overflow" *ngIf="matchResults">
+        <img class="mark" src="/assets/passed.png" *ngIf="passed"/>
+        <img class="mark" src="/assets/failed.png" *ngIf="failed"/>
+      </div>
     </div>
   </div>
 </div>

@@ -36,4 +36,12 @@ export class TaskExecutorComponent implements OnInit {
       this.matchResults = results;
     })
   }
+
+  get passed() {
+    return this.matchResults && !this.matchResults.find(result => !result.matched);
+  }
+
+  get failed() {
+    return this.matchResults && this.matchResults.find(result => !result.matched);
+  }
 }
