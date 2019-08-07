@@ -10,8 +10,8 @@ import {TaskService} from "../../services/task.service";
   styleUrls: ['./task-executor.component.scss']
 })
 export class TaskExecutorComponent implements OnInit {
-  @Input() task: TaskDescription;
-  @Input() mode: number;
+  _task: TaskDescription;
+  _mode: number;
 
   source: string = "";
   regex: string = "";
@@ -22,6 +22,26 @@ export class TaskExecutorComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  @Input()
+  set task(task: TaskDescription) {
+    this._task = task;
+    this.matchResults = null;
+  }
+
+  @Input()
+  set mode(mode: number) {
+    this._mode = mode;
+    this.matchResults = null;
+  }
+
+  get task() {
+    return this._task;
+  }
+
+  get mode() {
+    return this._mode;
   }
 
   get modes() {
