@@ -82,11 +82,15 @@ export class TaskExecutorComponent implements OnInit {
     })
   }
 
+  _hasMatchResult() {
+    return this._mode == MODE_IDS.MATCH && this.matchResults;
+  }
+
   get passed() {
-    return this.matchResults && !this.matchResults.find(result => !result.matched);
+    return this._hasMatchResult() && !this.matchResults.find(result => !result.matched);
   }
 
   get failed() {
-    return this.matchResults && this.matchResults.find(result => !result.matched);
+    return this._hasMatchResult() && this.matchResults.find(result => !result.matched);
   }
 }

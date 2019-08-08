@@ -1,7 +1,7 @@
 <div class="grid-x">
   <div class="cell result-item"
        *ngFor="let result of matchResults"
-       [ngClass]="{'match-success': result.matched, 'match-failed': !result.matched}"
+       [ngClass]="{'match-success': matchSuccess(result), 'match-failed': matchFailed(result)}"
   >
     <span *ngIf="!result.groups && !result.replaced">{{result.source}}</span>
     <div class="grid-x" *ngIf="result.groups">
