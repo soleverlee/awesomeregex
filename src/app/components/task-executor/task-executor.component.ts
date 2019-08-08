@@ -54,10 +54,20 @@ export class TaskExecutorComponent implements OnInit {
       this._onMatch(sources);
     else if (this.mode === MODE_IDS.FIND)
       this._onFind(sources);
+    else if (this.mode == MODE_IDS.REPLACE)
+      this._onReplace(sources);
   }
 
   _onMatch(sources: string[]) {
     this.taskService.match(sources, this.regex)
+    .subscribe(results => {
+      console.log(results);
+      this.matchResults = results;
+    })
+  }
+
+  _onReplace(sources: string[]) {
+    this.taskService.replace(sources, this.regex, this.replaceTo)
     .subscribe(results => {
       console.log(results);
       this.matchResults = results;

@@ -22,4 +22,8 @@ export class TaskService {
   find(sources: string[], regex: string): Observable<TaskMatchResult[]> {
     return this.http.post<TaskMatchResult[]>("/api/find", {sources, regex});
   }
+
+  replace(sources: string[], regex: string, replaceTo: string): Observable<TaskMatchResult[]> {
+    return this.http.post<TaskMatchResult[]>("/api/replace", {sources, regex, replaceTo});
+  }
 }

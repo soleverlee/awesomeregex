@@ -8,6 +8,7 @@ export class TaskDescription {
 
 export class TaskMatchResult {
   source: string;
+  replaced: string;
   matched: boolean;
   groups: string[];
 }
