@@ -21,3 +21,13 @@ npm install -g @angular/cli
 git clone https://github.com/soleverlee/awesomeregex-backend.git
 git clone https://github.com/soleverlee/awesomeregex.git
 ```
+
+### start
+
+```
+cd awesomeregex-backend
+./gradew bootRun
+cd awesomeregex
+ng serve
+```
+then you can visit http://localhost:4200
